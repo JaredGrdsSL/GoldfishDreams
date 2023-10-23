@@ -15,8 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
     void Update() {
-        processInputs();
-        Debug.Log(moveDirection);
+        ProcessInputs();
     }
 
     void FixedUpdate() {
@@ -32,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         transform.rotation = rotation;
     }
 
-    void processInputs() {
+    void ProcessInputs() {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
