@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
+
 
 public class FishMovement : MonoBehaviour {
 
     private LineRenderer lineRenderer;
+    private CinemachineVirtualCamera virtualCamera;
 
     public GameObject fishTraveling;
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
+        virtualCamera = GameObject.Find("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
     }
 
     void Update() {
@@ -36,7 +40,7 @@ public class FishMovement : MonoBehaviour {
 
 
             GameObject fishTravel = Instantiate(fishTraveling, gameObject.transform.position, gameObject.transform.rotation);
-            fishTravel.GetComponent<ParticleSystem>().Play();
+            virtualCamera.Follow = fishTravel.transform;
             GameObject.Destroy(transform.parent.gameObject);
         }
     }

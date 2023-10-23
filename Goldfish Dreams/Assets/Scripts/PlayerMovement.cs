@@ -7,10 +7,41 @@ public class PlayerMovement : MonoBehaviour {
     private Vector2 moveDirection;
     private Vector2 direction;
 
+    //gun sprites
+    private GameObject revolverSprite;
+
+
+    public GameObject Bullet;
+
     public float moveSpeed;
+
+    public int ammo;
+
+    public enum WhatGun { 
+        revolver,
+        shotgun,
+        rifle,
+    }
+
+    public WhatGun gunEquiped;
+
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+        revolverSprite = GameObject.Find("Revolver");
+
+        //change sprite depending on what gun is equiped
+        switch (gunEquiped) { 
+            case WhatGun.revolver:
+                ammo = 6;
+                break;
+            case WhatGun.shotgun:
+                ammo = 2;
+                break;
+            case WhatGun.rifle:
+                ammo = 16;
+                break;
+        }
     }
 
 
@@ -36,9 +67,33 @@ public class PlayerMovement : MonoBehaviour {
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+
+        if (Input.GetMouseButtonDown(0) && ammo > 0) {
+            Shoot();
+            ammo--;
+        }
+
+        //debug
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            UpgradeHandeler.piercingFish = true;
+        }
     }
 
     void MovePlayer() {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
+
+    void Shoot() {
+        switch (gunEquiped) {
+            case WhatGun.revolver:
+                Instantiate(Bullet, revolverSprite.transform.position, revolverSprite.transform.rotation);
+                break;
+            case WhatGun.shotgun:
+                
+                break;
+            case WhatGun.rifle:
+                
+                break;
+        }
     }
 }
