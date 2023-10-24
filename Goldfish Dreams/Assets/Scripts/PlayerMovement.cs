@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour {
         switch (gunEquiped) {
             case WhatGun.revolver:
                 Instantiate(Bullet, revolverSprite.transform.position, revolverSprite.transform.rotation);
+                FindObjectOfType<AudioManager>().Play("BulletShot");
                 break;
             case WhatGun.shotgun:
                 
