@@ -5,4 +5,5 @@ using UnityEngine;
 public class UpgradeHandeler : MonoBehaviour
 {
     static public bool piercingFish;
+    static public bool piercingFishDoors;
 }

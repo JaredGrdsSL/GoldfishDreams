@@ -124,7 +124,11 @@ GameObject:
   - component: {fileID: 4507949084651697567}
   - component: {fileID: 3693960664076430444}
   - component: {fileID: 5286873227749355849}
+<<<<<<< Updated upstream
   - component: {fileID: -2214030904641933088}
+=======
+  - component: {fileID: 271373951997148088}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -225,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27, y: 0.09}
+  m_Size: {x: 0.96, y: 0.09}
   m_EdgeRadius: 0
 --- !u!50 &3693960664076430444
 Rigidbody2D:
@@ -261,14 +265,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 50
+<<<<<<< Updated upstream
 --- !u!82 &-2214030904641933088
 AudioSource:
+=======
+  hitObsticleParticles: {fileID: 5208802984538744488, guid: fbeb54594fbfa9e4da7b722c9a42220d, type: 3}
+--- !u!61 &271373951997148088
+BoxCollider2D:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636729078170849755}
   m_Enabled: 1
+<<<<<<< Updated upstream
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c1fb306aeda408e4b8a5d9fc73cdc0ab, type: 3}
@@ -357,6 +368,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.09}
+    newSize: {x: 0.96, y: 0.09}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.03}
+  m_EdgeRadius: 0
+>>>>>>> Stashed changes
 --- !u!1 &6886883925553488926
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,5 +42,23 @@ public class FishTraveling : MonoBehaviour
                 GameObject.Destroy(gameObject);
             }
         }
+
+        if (collision.CompareTag("Wall") && !UpgradeHandeler.piercingFish) {
+            GameObject.Destroy(gameObject);
+            partic.Stop();
+            GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
+        }
+
+        if (collision.CompareTag("Door") && !UpgradeHandeler.piercingFish && !UpgradeHandeler.piercingFishDoors) {
+            GameObject.Destroy(gameObject);
+            partic.Stop();
+            GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
+        }
+
+        if (collision.CompareTag("PhysicsObject")) {
+            GameObject.Destroy(gameObject);
+            partic.Stop();
+            GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
+        }
     }
 }

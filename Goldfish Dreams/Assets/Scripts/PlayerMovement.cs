@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        revolverSprite = GameObject.Find("Revolver");
+        revolverSprite = transform.GetChild(0).gameObject;
 
         //change sprite depending on what gun is equiped
         switch (gunEquiped) { 
@@ -76,6 +76,9 @@ public class PlayerMovement : MonoBehaviour {
         //debug
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             UpgradeHandeler.piercingFish = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            UpgradeHandeler.piercingFishDoors = true;
         }
     }
 
