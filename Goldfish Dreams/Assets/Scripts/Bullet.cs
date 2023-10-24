@@ -12,4 +12,8 @@ public class Bullet : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * bulletSpeed;
     }
+
+    private void OnTriggerEnter(Collider other) {
+        GameObject.Destroy(gameObject);
+    }
 }
