@@ -125,12 +125,14 @@ public class EnemyController : MonoBehaviour {
 
     IEnumerator Shoot() {
         if (gunEquiped != WhatGun.shotgun) {
-            Instantiate(enemyBullet, usingGun.transform.position, gameObject.transform.rotation);
+            Instantiate(enemyBullet, usingGun.transform.position + transform.forward * 5, gameObject.transform.rotation);
         }
         else {
             for (int i = 3; i > 0; i--) {
                 GameObject newBullet = Instantiate(enemyBullet, usingGun.transform.position, gameObject.transform.rotation * Quaternion.Euler(0, 0, Random.Range(-30, 30)));
-                newBullet.GetComponent<EnemyBullet>().bulletSpeed = 12;
+                EnemyBullet enemyBulletReference = newBullet.GetComponent<EnemyBullet>();
+                enemyBulletReference.GetComponent<EnemyBullet>().bulletSpeed = 12;
+                enemyBulletReference.shooter = gameObject;
             }
         }
         reloading = true;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour {
     public float bulletSpeed;
     public ParticleSystem hitObsticleParticles;
+    public GameObject shooter;
 
     private Rigidbody2D rb;
 
@@ -16,7 +17,7 @@ public class EnemyBullet : MonoBehaviour {
 
     //might copy the changes over to the player bullet script
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore") || collision.CompareTag("Enemy")) {
+        if (collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore")) {
 
             if (collision.CompareTag("Wall")) {
                 GameObject.Destroy(gameObject);

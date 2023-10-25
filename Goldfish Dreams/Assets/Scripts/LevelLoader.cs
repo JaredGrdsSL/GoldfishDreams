@@ -60,6 +60,7 @@ public class LevelLoader : MonoBehaviour {
     void SendPlayer(Collider2D collision) {
         switch (whereTo) {
             case (Locations.nextStage):
+                Time.timeScale = 1;
                 GameObject.Destroy(collision.gameObject);
                 upgradeUIElement.SetActive(true);
                 break;
