@@ -237,6 +237,7 @@ MonoBehaviour:
   speed: 15
   player: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
   particles: {fileID: 4627594925166028172, guid: 86a011df73097134abd5f736e70987ed, type: 3}
+  corpse: {fileID: 3712129993198474820, guid: 6a003e42efc967243b076b51f867e455, type: 3}
 --- !u!61 &5872837329903972579
 BoxCollider2D:
   m_ObjectHideFlags: 0

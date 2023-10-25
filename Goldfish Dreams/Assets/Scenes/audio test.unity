@@ -358,6 +358,8 @@ MonoBehaviour:
     name: BulletShot
     volume: 0.317
     pitch: 1.39
+    loop: 0
+    oneShot: 0
     source: {fileID: 0}
 --- !u!4 &944565067
 Transform:

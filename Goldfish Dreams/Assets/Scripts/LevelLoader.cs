@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,17 +18,27 @@ public class LevelLoader : MonoBehaviour {
 
     public Locations whereTo;
     public bool enemiesNeedToBeKilled;
+    private TextMeshProUGUI levelLoaderText;
 
     //might couse problems with multiple levelLoaders
     public int enemiesRemaining;
+
+    private void Start() {
+        levelLoaderText = GameObject.Find("LevelLoadingText").GetComponent<TextMeshProUGUI>();
+        levelLoaderText.color = new Color(1,1,1,0);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.CompareTag("Player")) {
             if (enemiesNeedToBeKilled) {
-                if (enemiesRemaining == 0) {
+                if (enemiesRemaining <= 0) {
 
                     SendPlayer();
+                }
+
+                else {
+                    levelLoaderText.color = new Color(1, 1, 1, 1);
                 }
             }
 
@@ -36,6 +47,12 @@ public class LevelLoader : MonoBehaviour {
             }
         }
 
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (levelLoaderText.color == new Color(1,1,1,1)) {
+            levelLoaderText.color = new Color(1, 1, 1, 0);
+        }
     }
 
     void SendPlayer() {
