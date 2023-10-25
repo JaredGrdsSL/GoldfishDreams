@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,34 +18,50 @@ public class LevelLoader : MonoBehaviour {
 
     public Locations whereTo;
     public bool enemiesNeedToBeKilled;
+    private TextMeshProUGUI levelLoaderText;
+    public GameObject upgradeUIElement;
 
-    //might couse problems with multiple levelLoaders
     public int enemiesRemaining;
+
+    private void Start() {
+        upgradeUIElement = GameObject.Find("Upgrades");
+        upgradeUIElement.SetActive(false);
+        levelLoaderText = GameObject.Find("LevelLoadingText").GetComponent<TextMeshProUGUI>();
+        levelLoaderText.color = new Color(1,1,1,0);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.CompareTag("Player")) {
             if (enemiesNeedToBeKilled) {
-                if (enemiesRemaining == 0) {
+                if (enemiesRemaining <= 0) {
 
-                    SendPlayer();
+                    SendPlayer(collision);
+                }
+
+                else {
+                    levelLoaderText.color = new Color(1, 1, 1, 1);
                 }
             }
 
             else {
-                SendPlayer();
+                SendPlayer(collision);
             }
         }
 
     }
 
-    void SendPlayer() {
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (levelLoaderText.color == new Color(1,1,1,1)) {
+            levelLoaderText.color = new Color(1, 1, 1, 0);
+        }
+    }
+
+    void SendPlayer(Collider2D collision) {
         switch (whereTo) {
             case (Locations.nextStage):
-                int currentSceneIndex1 = SceneManager.GetActiveScene().buildIndex;
-                int nextSceneIndex = (currentSceneIndex1 + 1) % SceneManager.sceneCountInBuildSettings;
-                
-                SceneManager.LoadScene(nextSceneIndex);
+                GameObject.Destroy(collision.gameObject);
+                upgradeUIElement.SetActive(true);
                 break;
             case (Locations.previousStage):
                 int currentSceneIndex2 = SceneManager.GetActiveScene().buildIndex;
