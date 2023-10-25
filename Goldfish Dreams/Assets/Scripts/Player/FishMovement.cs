@@ -43,6 +43,9 @@ public class FishMovement : MonoBehaviour {
 
 
                 GameObject fishTravel = Instantiate(fishTraveling, gameObject.transform.position + transform.forward * 2, gameObject.transform.rotation);
+                if (UpgradeHandeler.piercingFish) {
+                    fishTravel.GetComponent<CircleCollider2D>().enabled = false;
+                }
                 virtualCamera.Follow = fishTravel.transform;
                 GameObject.Destroy(transform.parent.gameObject);
             }

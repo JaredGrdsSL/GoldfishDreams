@@ -4,8 +4,7 @@ using Cinemachine;
 using TMPro;
 using UnityEngine;
 
-public class FishTraveling : MonoBehaviour
-{
+public class FishTraveling : MonoBehaviour {
     private Rigidbody2D rb;
     private ParticleSystem partic;
     private GameObject particle;
@@ -17,8 +16,7 @@ public class FishTraveling : MonoBehaviour
     public GameObject corpse;
     private CinemachineVirtualCamera virtualCamera;
     private AudioManager audioManager;
-    void Start()
-    {
+    void Start() {
         deathText = GameObject.Find("DeathText").GetComponent<TextMeshProUGUI>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
@@ -63,30 +61,31 @@ public class FishTraveling : MonoBehaviour
             GameObject.Destroy(particle, .5f);
             GameObject.Destroy(collision.gameObject);
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().enemiesRemaining--;
-            if (!UpgradeHandeler.piercingFish) { 
+            if (!UpgradeHandeler.piercingFish) {
                 GameObject.Destroy(gameObject);
             }
         }
+        if ((collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore")) && !UpgradeHandeler.piercingFish) {
+            if (collision.CompareTag("Wall") && !UpgradeHandeler.piercingFish) {
+                GameObject.Destroy(gameObject);
+                partic.Stop();
+                GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
+                EndGame();
+            }
 
-        if (collision.CompareTag("Wall") && !UpgradeHandeler.piercingFish) {
-            GameObject.Destroy(gameObject);
-            partic.Stop();
-            GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
-            EndGame();
-        }
+            if (collision.CompareTag("Door") && !UpgradeHandeler.piercingFish && !UpgradeHandeler.piercingFishDoors) {
+                GameObject.Destroy(gameObject);
+                partic.Stop();
+                GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
+                EndGame();
+            }
 
-        if (collision.CompareTag("Door") && !UpgradeHandeler.piercingFish && !UpgradeHandeler.piercingFishDoors) {
-            GameObject.Destroy(gameObject);
-            partic.Stop();
-            GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
-            EndGame();
-        }
-
-        if (collision.CompareTag("PhysicsObject")) {
-            GameObject.Destroy(gameObject);
-            partic.Stop();
-            GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
-            EndGame();
+            if (collision.CompareTag("PhysicsObject")) {
+                GameObject.Destroy(gameObject);
+                partic.Stop();
+                GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
+                EndGame();
+            }
         }
     }
 

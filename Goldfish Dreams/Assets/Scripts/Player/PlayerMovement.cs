@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
     private float downTime;
     private bool isDown = false;
 
-    public enum WhatGun { 
+    public enum WhatGun {
         revolver,
         shotgun,
         rifle,
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
         set {
             health = value;
             Instantiate(corpse, gameObject.transform.position, gameObject.transform.rotation);
-            deathText.color = new Color(deathText.color.r, deathText.color.g, deathText.color.b,1);
+            deathText.color = new Color(deathText.color.r, deathText.color.g, deathText.color.b, 1);
             GameObject.Destroy(gameObject);
         }
         get {
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour {
         rifleRoundFull = GameObject.Find("RifleRoundFull").GetComponent<Image>();
         rifleRoundEmpty = GameObject.Find("RifleRoundEmpty").GetComponent<Image>();
 
-        revolverRoundFull.color = new Color(1,1,1,0);
+        revolverRoundFull.color = new Color(1, 1, 1, 0);
         revolverRoundEmpty.color = new Color(1, 1, 1, 0);
         shotgunRoundFull.color = new Color(1, 1, 1, 0);
         shotgunRoundEmpty.color = new Color(1, 1, 1, 0);
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour {
         rifleSprite.SetActive(false);
 
 
-        switch (gunEquiped) { 
+        switch (gunEquiped) {
             case WhatGun.revolver:
                 ammo = 6;
                 downTime = 0.01f;
@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate() {
         MovePlayer();
         RotatePlayer();
-        
+
     }
 
     void RotatePlayer() {
@@ -134,19 +134,19 @@ public class PlayerMovement : MonoBehaviour {
         moveDirection = new Vector2(moveX, moveY).normalized;
 
         if (Input.GetMouseButtonDown(0) && ammo > 0 && !isDown && gunEquiped != WhatGun.rifle) {
-            StartCoroutine(Shoot());
+            for (int i = 0; i < UpgradeHandeler.bulletMultiplyer; i++) {
+                StartCoroutine(Shoot());
+            }
+            ammo--;
+            ammoCounter.text = ammo.ToString();
         }
 
         if (Input.GetMouseButton(0) && ammo > 0 && !isDown && gunEquiped == WhatGun.rifle) {
-            StartCoroutine(Shoot());
-        }
-
-        //debug
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            UpgradeHandeler.piercingFish = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            UpgradeHandeler.piercingFishDoors = true;
+            for (int i = 0; i < UpgradeHandeler.bulletMultiplyer; i++) {
+                StartCoroutine(Shoot());
+            }
+            ammo--;
+            ammoCounter.text = ammo.ToString();
         }
     }
 
@@ -158,6 +158,7 @@ public class PlayerMovement : MonoBehaviour {
         isDown = true;
         switch (gunEquiped) {
             case WhatGun.revolver:
+                CinemachineShake.instance.ShakeCamra(5f, .1f);
                 Instantiate(Bullet, revolverSprite.transform.position, revolverSprite.transform.rotation);
                 audioManager.Play("RevolverFire");
                 if (ammo == 1) {
@@ -166,8 +167,9 @@ public class PlayerMovement : MonoBehaviour {
                 }
                 break;
             case WhatGun.shotgun:
+                CinemachineShake.instance.ShakeCamra(7f, .2f);
                 for (int i = 5; i > 0; i--) {
-                    Instantiate(Bullet, shotgunSprite.transform.position, shotgunSprite.transform.rotation * Quaternion.Euler(0,0, Random.Range(-30,30)));
+                    Instantiate(Bullet, shotgunSprite.transform.position, shotgunSprite.transform.rotation * Quaternion.Euler(0, 0, Random.Range(-30, 30)));
                 }
                 audioManager.Play("ShotgunFire");
                 if (ammo == 1) {
@@ -176,6 +178,7 @@ public class PlayerMovement : MonoBehaviour {
                 }
                 break;
             case WhatGun.rifle:
+                CinemachineShake.instance.ShakeCamra(5f, .05f);
                 Instantiate(Bullet, rifleSprite.transform.position, rifleSprite.transform.rotation);
                 audioManager.Play("RifleFire");
                 if (ammo == 1) {
@@ -184,11 +187,9 @@ public class PlayerMovement : MonoBehaviour {
                 }
                 break;
         }
-        
+
         yield return new WaitForSeconds(downTime);
 
         isDown = false;
-        ammo--;
-        ammoCounter.text = ammo.ToString();
     }
 }

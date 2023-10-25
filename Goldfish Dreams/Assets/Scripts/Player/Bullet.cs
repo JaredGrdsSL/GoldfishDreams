@@ -14,27 +14,31 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Wall")) {
-            GameObject.Destroy(gameObject);
-            GameObject.Destroy(Instantiate(hitObsticleParticles, gameObject.transform.position, gameObject.transform.rotation).gameObject, .4f);
-        }
-
-        if (collision.CompareTag("Door")) {
-
-            GameObject.Destroy(gameObject, .2f);
-            GameObject.Destroy(Instantiate(hitObsticleParticles, gameObject.transform.position, gameObject.transform.rotation).gameObject, .4f);
-        }
-
         if (collision.CompareTag("Enemy")) {
             collision.GetComponent<EnemyController>().Health--;
-            GameObject.Destroy(gameObject);
+            if (!UpgradeHandeler.piercingBullets) {
+                GameObject.Destroy(gameObject);
+            }
 
         }
 
-        if (collision.CompareTag("PhysicsObject")) {
+        if ((collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore")) && !UpgradeHandeler.bouncingBullets) {
+            if (collision.CompareTag("Wall")) {
+                GameObject.Destroy(gameObject);
+                GameObject.Destroy(Instantiate(hitObsticleParticles, gameObject.transform.position, gameObject.transform.rotation).gameObject, .4f);
+            }
 
-            GameObject.Destroy(gameObject, .05f);
-            GameObject.Destroy(Instantiate(hitObsticleParticles, gameObject.transform.position, gameObject.transform.rotation).gameObject, .4f);
+            if (collision.CompareTag("Door")) {
+
+                GameObject.Destroy(gameObject, .2f);
+                GameObject.Destroy(Instantiate(hitObsticleParticles, gameObject.transform.position, gameObject.transform.rotation).gameObject, .4f);
+            }
+
+            if (collision.CompareTag("PhysicsObject")) {
+
+                GameObject.Destroy(gameObject, .05f);
+                GameObject.Destroy(Instantiate(hitObsticleParticles, gameObject.transform.position, gameObject.transform.rotation).gameObject, .4f);
+            }
         }
     }
 }

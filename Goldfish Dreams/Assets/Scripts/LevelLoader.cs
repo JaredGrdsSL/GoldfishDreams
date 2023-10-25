@@ -19,11 +19,13 @@ public class LevelLoader : MonoBehaviour {
     public Locations whereTo;
     public bool enemiesNeedToBeKilled;
     private TextMeshProUGUI levelLoaderText;
+    public GameObject upgradeUIElement;
 
-    //might couse problems with multiple levelLoaders
     public int enemiesRemaining;
 
     private void Start() {
+        upgradeUIElement = GameObject.Find("Upgrades");
+        upgradeUIElement.SetActive(false);
         levelLoaderText = GameObject.Find("LevelLoadingText").GetComponent<TextMeshProUGUI>();
         levelLoaderText.color = new Color(1,1,1,0);
     }
@@ -34,7 +36,7 @@ public class LevelLoader : MonoBehaviour {
             if (enemiesNeedToBeKilled) {
                 if (enemiesRemaining <= 0) {
 
-                    SendPlayer();
+                    SendPlayer(collision);
                 }
 
                 else {
@@ -43,7 +45,7 @@ public class LevelLoader : MonoBehaviour {
             }
 
             else {
-                SendPlayer();
+                SendPlayer(collision);
             }
         }
 
@@ -55,13 +57,11 @@ public class LevelLoader : MonoBehaviour {
         }
     }
 
-    void SendPlayer() {
+    void SendPlayer(Collider2D collision) {
         switch (whereTo) {
             case (Locations.nextStage):
-                int currentSceneIndex1 = SceneManager.GetActiveScene().buildIndex;
-                int nextSceneIndex = (currentSceneIndex1 + 1) % SceneManager.sceneCountInBuildSettings;
-                
-                SceneManager.LoadScene(nextSceneIndex);
+                GameObject.Destroy(collision.gameObject);
+                upgradeUIElement.SetActive(true);
                 break;
             case (Locations.previousStage):
                 int currentSceneIndex2 = SceneManager.GetActiveScene().buildIndex;
