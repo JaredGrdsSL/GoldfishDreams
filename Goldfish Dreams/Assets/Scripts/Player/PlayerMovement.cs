@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
     private GameObject rifleSprite;
 
     //UI Elements
-    private TextMeshProUGUI ammoCounter;
+    //private TextMeshProUGUI ammoCounter;
     private Image revolverRoundFull;
     private Image revolverRoundEmpty;
     private Image shotgunRoundFull;
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
         //getting and disableling UI Elements
-        ammoCounter = GameObject.Find("AmmoCount").GetComponent<TextMeshProUGUI>();
+        //ammoCounter = GameObject.Find("AmmoCount").GetComponent<TextMeshProUGUI>();
         revolverRoundFull = GameObject.Find("RevolverRoundFull").GetComponent<Image>();
         revolverRoundEmpty = GameObject.Find("RevolverRoundEmpty").GetComponent<Image>();
         shotgunRoundFull = GameObject.Find("ShotgunShellFull").GetComponent<Image>();
@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour {
                 rifleRoundFull.color = new Color(1, 1, 1, 1);
                 break;
         }
-        ammoCounter.text = ammo.ToString();
+        //ammoCounter.text = ammo.ToString();
     }
 
 
@@ -137,7 +137,7 @@ public class PlayerMovement : MonoBehaviour {
                 StartCoroutine(Shoot());
             }
             ammo--;
-            ammoCounter.text = ammo.ToString();
+            //ammoCounter.text = ammo.ToString();
         }
 
         if (Input.GetMouseButton(0) && ammo > 0 && !isDown && gunEquiped == WhatGun.rifle) {
@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour {
                 StartCoroutine(Shoot());
             }
             ammo--;
-            ammoCounter.text = ammo.ToString();
+            //ammoCounter.text = ammo.ToString();
         }
 
         if (Input.GetKeyDown(KeyCode.R)) {
@@ -169,9 +169,7 @@ public class PlayerMovement : MonoBehaviour {
             UpgradeHandeler.piercingBullets = !UpgradeHandeler.piercingBullets;
         }
         if (Input.GetKeyDown(KeyCode.Alpha5)) {
-            UpgradeHandeler.bulletMultiplyer *= UpgradeHandeler.bulletMultiplyer;
-            //for the first time it need to be ++ed because 1*1=1
-            if (UpgradeHandeler.bulletMultiplyer == 1) { UpgradeHandeler.bulletMultiplyer++; }
+            UpgradeHandeler.bulletMultiplyer *= 2;
         }
     }
 

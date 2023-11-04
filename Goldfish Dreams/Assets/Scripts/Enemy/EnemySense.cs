@@ -20,7 +20,6 @@ public class EnemySense : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
-            enemyController.player = null;
             enemyController.inRange = false;
         }
     }

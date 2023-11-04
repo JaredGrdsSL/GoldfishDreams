@@ -18,6 +18,12 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Enemy")) {
             collision.GetComponent<EnemyController>().Health--;
+            if (!collision.GetComponent<EnemyController>().inRange) {
+                PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
+                if (players.Length > 0) {
+                    collision.GetComponent<EnemyController>().player = players[players.Length - 1].gameObject;
+                }
+            }
             if (!UpgradeHandeler.piercingBullets) {
                 GameObject.Destroy(gameObject);
             }

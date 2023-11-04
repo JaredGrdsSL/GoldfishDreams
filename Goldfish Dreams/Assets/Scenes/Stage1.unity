@@ -379,6 +379,10 @@ PrefabInstance:
       value: 146.505
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 1
       objectReference: {fileID: 0}
@@ -1373,6 +1377,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 171.346
       objectReference: {fileID: 0}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 0
@@ -3089,6 +3097,10 @@ PrefabInstance:
       value: 12.329
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 1
       objectReference: {fileID: 0}
@@ -4234,6 +4246,10 @@ PrefabInstance:
       value: 130.702
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 2
       objectReference: {fileID: 0}
@@ -4612,6 +4628,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 31.438
       objectReference: {fileID: 0}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 2
@@ -5060,6 +5080,10 @@ PrefabInstance:
       value: 176.071
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 0
       objectReference: {fileID: 0}
@@ -5439,6 +5463,10 @@ PrefabInstance:
       value: 27.048
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 0
       objectReference: {fileID: 0}
@@ -5562,6 +5590,10 @@ PrefabInstance:
       value: 163.358
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 1
       objectReference: {fileID: 0}
@@ -5622,6 +5654,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 297.642
       objectReference: {fileID: 0}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 2
@@ -6507,6 +6543,10 @@ PrefabInstance:
       value: 162.048
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 1
       objectReference: {fileID: 0}
@@ -6808,6 +6848,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 303.473
       objectReference: {fileID: 0}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 0
@@ -8379,6 +8423,10 @@ PrefabInstance:
       value: 218.595
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 0
       objectReference: {fileID: 0}
@@ -8745,6 +8793,10 @@ PrefabInstance:
       value: 66.02
       objectReference: {fileID: 0}
     - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+    - target: {fileID: 2448038729279560533, guid: 419870c4cbfa5cb498cac59245dbccfb, type: 3}
       propertyPath: gunEquiped
       value: 1
       objectReference: {fileID: 0}
@@ -8814,6 +8866,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2655946650009552070, guid: fbade9bbbe1fe244d9e45426d10fa894, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2655946650443186884, guid: fbade9bbbe1fe244d9e45426d10fa894, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -8904,6 +8960,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2655946650443186904, guid: fbade9bbbe1fe244d9e45426d10fa894, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655946651547121753, guid: fbade9bbbe1fe244d9e45426d10fa894, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
