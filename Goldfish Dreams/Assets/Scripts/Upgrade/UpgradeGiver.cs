@@ -25,7 +25,7 @@ public class UpgradeGiver : MonoBehaviour {
                 UpgradeHandeler.piercingFishDoors = true;
                 break;
             case (UpGrades.bouncingBullets):
-                UpgradeHandeler.bouncingBullets = true;
+                UpgradeHandeler.bulletBouncePower += 0.5f;
                 break;
             case (UpGrades.piercingBullets):
                 UpgradeHandeler.piercingBullets = true;

@@ -22,15 +22,27 @@ public class UpgradeSorter : MonoBehaviour {
                 int e = Random.Range(1, 5 + 1);
                 switch (e) {
                     case 1:
+                        if (UpgradeHandeler.piercingFish) {
+                            i++;
+                            break;
+                        }
                         Instantiate(piercingFish, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
                     case 2:
+                        if (UpgradeHandeler.piercingFishDoors) {
+                            i++;
+                            break;
+                        }
                         Instantiate(piercingFishDoors, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
                     case 3:
                         Instantiate(bouncingBullets, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
                     case 4:
+                        if (UpgradeHandeler.piercingBullets) {
+                            i++;
+                            break;
+                        }
                         Instantiate(piercingBullets, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
                     case 5:

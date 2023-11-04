@@ -316,7 +316,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &164482409 stripped
 Transform:
@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 926427304110508310, guid: e62fb80b6214a9148a4b6ae113bdc49e, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 926427304110508310, guid: e62fb80b6214a9148a4b6ae113bdc49e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1761,7 +1761,7 @@ Transform:
   - {fileID: 2010069391}
   - {fileID: 700592734}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558405665
 GameObject:
@@ -3851,7 +3851,7 @@ Transform:
   - {fileID: 713244264}
   - {fileID: 1497095153}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1112716899
 MonoBehaviour:
@@ -6100,7 +6100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4467451062113497445, guid: 6e15bffa128d12546bd0a8c605b96acc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4467451062113497445, guid: 6e15bffa128d12546bd0a8c605b96acc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6896,7 +6896,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836374050
 GameObject:
@@ -8316,7 +8316,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -16.68}
 --- !u!4 &2110577261 stripped
 Transform:
@@ -8832,7 +8832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2655946650443186904, guid: fbade9bbbe1fe244d9e45426d10fa894, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2655946650443186904, guid: fbade9bbbe1fe244d9e45426d10fa894, type: 3}
       propertyPath: m_AnchorMax.x

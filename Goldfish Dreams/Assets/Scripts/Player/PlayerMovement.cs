@@ -147,6 +147,32 @@ public class PlayerMovement : MonoBehaviour {
             ammo--;
             ammoCounter.text = ammo.ToString();
         }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            //idk if ill reset the whole game or just the scene
+            Time.timeScale = 1;
+            string currentScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentScene);
+        }
+
+        //debuig
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            UpgradeHandeler.piercingFish = !UpgradeHandeler.piercingFish;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            UpgradeHandeler.piercingFishDoors = !UpgradeHandeler.piercingFishDoors;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+            UpgradeHandeler.bulletBouncePower += .5f;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4)) {
+            UpgradeHandeler.piercingBullets = !UpgradeHandeler.piercingBullets;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5)) {
+            UpgradeHandeler.bulletMultiplyer *= UpgradeHandeler.bulletMultiplyer;
+            //for the first time it need to be ++ed because 1*1=1
+            if (UpgradeHandeler.bulletMultiplyer == 1) { UpgradeHandeler.bulletMultiplyer++; }
+        }
     }
 
     void MovePlayer() {
