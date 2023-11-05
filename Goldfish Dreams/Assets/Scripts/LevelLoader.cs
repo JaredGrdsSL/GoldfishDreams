@@ -40,6 +40,7 @@ public class LevelLoader : MonoBehaviour {
                 }
 
                 else {
+                    levelLoaderText.text = enemiesRemaining + " Soulless Oppressors Left TO Kill";
                     levelLoaderText.color = new Color(1, 1, 1, 1);
                 }
             }

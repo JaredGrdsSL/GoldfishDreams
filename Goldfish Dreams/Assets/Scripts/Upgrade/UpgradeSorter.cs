@@ -61,6 +61,7 @@ public class UpgradeSorter : MonoBehaviour {
         if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings == 0) {
             FinishedScreen.SetActive(true);
             if (GameSettings.timerOn) {
+                GameObject.Find("FinalTimeText").SetActive(true);
                 int minutes = Mathf.FloorToInt(GameSettings.speedrunTimer / 60);
                 int seconds = Mathf.FloorToInt(GameSettings.speedrunTimer % 60);
                 int milliseconds = Mathf.FloorToInt((GameSettings.speedrunTimer * 1000) % 1000);
@@ -92,7 +93,7 @@ public class UpgradeSorter : MonoBehaviour {
     }
 
     public void Loop() {
+        GameSettings.timerOn = false;
         SceneManager.LoadScene(1);
     }
 }
-
