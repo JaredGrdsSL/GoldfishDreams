@@ -13,7 +13,7 @@ public class LevelLoader : MonoBehaviour {
         stage3,
         stage4,
         stage5,
-        creddits,
+        starterPack,
     }
 
     public Locations whereTo;
@@ -85,7 +85,7 @@ public class LevelLoader : MonoBehaviour {
             case (Locations.stage5):
                 SceneManager.LoadScene(5);
                 break;
-            case (Locations.creddits):
+            case (Locations.starterPack):
                 SceneManager.LoadScene(6);
                 break;
         }
