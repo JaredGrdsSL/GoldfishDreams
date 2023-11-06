@@ -1040,20 +1040,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 405596448}
     m_Modifications:
     - target: {fileID: 2029949701, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
+      propertyPath: m_Anchor.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029949701, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_Distance
-      value: 22.204956
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 2029949701, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -2.51
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 2029949701, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 22
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029949701, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2029949701, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_AutoConfigureConnectedAnchor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 487904097726741136, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_RootOrder
@@ -1061,11 +1069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487904097726741136, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 487904097726741136, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 487904097726741136, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1105,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487904097726741139, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 22
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 487904097726741356, guid: 30557ea76932f02479a03b095bab1f1f, type: 3}
       propertyPath: m_Name
