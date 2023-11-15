@@ -25,15 +25,13 @@ public class UpgradeGiver : MonoBehaviour {
                 UpgradeHandeler.piercingFishDoors = true;
                 break;
             case (UpGrades.bouncingBullets):
-                UpgradeHandeler.bouncingBullets = true;
+                UpgradeHandeler.bulletBouncePower += 0.5f;
                 break;
             case (UpGrades.piercingBullets):
                 UpgradeHandeler.piercingBullets = true;
                 break;
             case (UpGrades.bullterMultiplyer):
-                UpgradeHandeler.bulletMultiplyer *= UpgradeHandeler.bulletMultiplyer;
-                //for the first time it need to be ++ed because 1*1=1
-                if (UpgradeHandeler.bulletMultiplyer == 1) { UpgradeHandeler.bulletMultiplyer++; }
+                UpgradeHandeler.bulletMultiplyer *= 2;
                 break;
         }
 

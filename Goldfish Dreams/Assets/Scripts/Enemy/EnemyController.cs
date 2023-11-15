@@ -19,7 +19,8 @@ public class EnemyController : MonoBehaviour {
     LayerMask raycastLayerMask;
     public GameObject player;
     private bool angered = false;
-    private bool seesPlayer = false;
+    public bool seesPlayer = false;
+    private bool gotShot = false;
 
     //shooting
     private float reloadSpeed;
@@ -43,11 +44,14 @@ public class EnemyController : MonoBehaviour {
                 audioManager.Play("Hurt2");
                 Instantiate(corpse, gameObject.transform.position, gameObject.transform.rotation);
                 GameObject.Find("LevelLoader").GetComponent<LevelLoader>().enemiesRemaining--;
-                GameObject.Destroy(gameObject);
+                Destroy(gameObject);
             }
             else {
                 animator.SetTrigger("Damaged");
                 audioManager.Play("Hurt1");
+                if (!seesPlayer) {
+                    StartCoroutine(gotShotLogic());
+                }
             }
         }
         get {
@@ -103,7 +107,7 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (inRange && player != null) {
+        if ((inRange && player != null || gotShot) && !ReferenceEquals(this.gameObject, null)) {
             Debug.DrawRay(gameObject.transform.position, player.transform.position - transform.position);
             RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, player.transform.position - transform.position, 100, raycastLayerMask);
             if (hit.collider != null) {
@@ -132,11 +136,16 @@ public class EnemyController : MonoBehaviour {
                 GameObject newBullet = Instantiate(enemyBullet, usingGun.transform.position, gameObject.transform.rotation * Quaternion.Euler(0, 0, Random.Range(-30, 30)));
                 EnemyBullet enemyBulletReference = newBullet.GetComponent<EnemyBullet>();
                 enemyBulletReference.GetComponent<EnemyBullet>().bulletSpeed = 12;
-                enemyBulletReference.shooter = gameObject;
             }
         }
         reloading = true;
         yield return new WaitForSeconds(reloadSpeed);
         reloading = false;
+    }
+
+    IEnumerator gotShotLogic() {
+        gotShot = true;
+        yield return new WaitForSeconds(1);
+        gotShot = false;
     }
 }

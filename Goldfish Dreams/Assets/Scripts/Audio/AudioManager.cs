@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour {
     public Sound[] sounds;
 
     public static AudioManager instance;
+    public AudioMixer mixer;
 
     void Awake() {
         if (instance == null) {
@@ -37,6 +38,9 @@ public class AudioManager : MonoBehaviour {
             Debug.Log("couldnt find " + name);
             return;
         }
+
+        s.source.outputAudioMixerGroup = mixer.FindMatchingGroups("Master")[0];
+
         if (s.oneShot) {
             s.source.PlayOneShot(s.clip);
         }

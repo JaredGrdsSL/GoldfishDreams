@@ -129,3 +129,4 @@ MonoBehaviour:
     loop: 0
     oneShot: 0
     source: {fileID: 0}
+  mixer: {fileID: 24100000, guid: ec3b94d6a7d15164c94959030994e807, type: 2}

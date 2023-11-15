@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour {
     public float bulletSpeed;
     public ParticleSystem hitObsticleParticles;
-    public GameObject shooter;
 
     private Rigidbody2D rb;
 
