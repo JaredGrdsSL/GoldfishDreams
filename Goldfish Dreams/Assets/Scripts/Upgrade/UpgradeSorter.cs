@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class UpgradeSorter : MonoBehaviour {
 
     public GameObject FinishedScreen;
+    private AudioManager audioManager;
+    private GameObject finalTimeText;
 
     bool isReady = false;
     public GameObject upgradeSlot1;
@@ -19,7 +21,12 @@ public class UpgradeSorter : MonoBehaviour {
     public GameObject bouncingBullets;
     public GameObject piercingBullets;
     public GameObject bulletMultiplier;
-    
+
+    private void Awake() {
+        finalTimeText = GameObject.Find("FinalTimeText");
+        finalTimeText.SetActive(false);
+    }
+
     private void OnEnable() {
         
 
@@ -61,7 +68,7 @@ public class UpgradeSorter : MonoBehaviour {
         if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings == 0) {
             FinishedScreen.SetActive(true);
             if (GameSettings.timerOn) {
-                GameObject.Find("FinalTimeText").SetActive(true);
+                finalTimeText.SetActive(true);
                 int minutes = Mathf.FloorToInt(GameSettings.speedrunTimer / 60);
                 int seconds = Mathf.FloorToInt(GameSettings.speedrunTimer % 60);
                 int milliseconds = Mathf.FloorToInt((GameSettings.speedrunTimer * 1000) % 1000);
@@ -88,7 +95,8 @@ public class UpgradeSorter : MonoBehaviour {
     public void BackToMenu() {
         int currentSceneIndex1 = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = (currentSceneIndex1 + 1) % SceneManager.sceneCountInBuildSettings;
-
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.Stop("Theme");
         SceneManager.LoadScene(nextSceneIndex);
     }
 
