@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 569455601, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6b1dc1cb8a83790429fa3e4ee3365789, type: 2}
+      objectReference: {fileID: 2100000, guid: 25762290972c78b449a768692b4fb893, type: 2}
     - target: {fileID: 569455602, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.47
@@ -251,6 +251,18 @@ PrefabInstance:
     - target: {fileID: 5625314856703869654, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625314856703869655, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625314856703869655, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625314856703869655, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
@@ -313,6 +325,10 @@ PrefabInstance:
     - target: {fileID: 8424682958074099514, guid: d88cbbb4aac3d974e8ed3327e3f463ad, type: 3}
       propertyPath: m_Name
       value: Shoes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424682958074099515, guid: d88cbbb4aac3d974e8ed3327e3f463ad, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d88cbbb4aac3d974e8ed3327e3f463ad, type: 3}
@@ -1804,6 +1820,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5298812793901099636, guid: 33db8d991dd45f945a5cf93380555c87, type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 6796928662516941719, guid: 33db8d991dd45f945a5cf93380555c87, type: 3}
       propertyPath: m_Name
       value: Mattress
@@ -2991,7 +3011,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 6a68be2e91153fa47901464af5582c26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3700,7 +3720,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: f7cf0407ab134954aa87cac7a63c745a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4843,6 +4863,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1117679445}
     m_Modifications:
+    - target: {fileID: 83938242239839888, guid: f901dd7de876ace44a3b39ebacfe3d08, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 5876220582891076479, guid: f901dd7de876ace44a3b39ebacfe3d08, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4981,7 +5005,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -13
+  m_SortingOrder: -21
   m_Sprite: {fileID: 21300000, guid: 6a68be2e91153fa47901464af5582c26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5779,6 +5803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LawnChair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4370536277952606488, guid: 0fb15f91fbd132c4b89ae8e893cb8c12, type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8591014884953213551, guid: 0fb15f91fbd132c4b89ae8e893cb8c12, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -6191,6 +6219,10 @@ PrefabInstance:
     - target: {fileID: 1877293108005437699, guid: 0fb15f91fbd132c4b89ae8e893cb8c12, type: 3}
       propertyPath: m_Name
       value: LawnChair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370536277952606488, guid: 0fb15f91fbd132c4b89ae8e893cb8c12, type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8591014884953213551, guid: 0fb15f91fbd132c4b89ae8e893cb8c12, type: 3}
       propertyPath: m_RootOrder
@@ -6717,7 +6749,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -15
+  m_SortingOrder: -22
   m_Sprite: {fileID: 21300000, guid: 1a93caf4295ebd548920cf0747061199, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6974,7 +7006,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -20
   m_Sprite: {fileID: 21300000, guid: 495fbb1a847377641a0e13d847b40dba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
