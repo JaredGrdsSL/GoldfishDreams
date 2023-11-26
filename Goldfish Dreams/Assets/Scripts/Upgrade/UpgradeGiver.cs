@@ -11,6 +11,7 @@ public class UpgradeGiver : MonoBehaviour {
         piercingBullets,
         bullterMultiplyer,
         coolFish,
+        bouncingFish,
         playerMoveSpeedUp,
     }
 
@@ -37,6 +38,10 @@ public class UpgradeGiver : MonoBehaviour {
                 break;
             case (UpGrades.coolFish):
                 UpgradeHandeler.coolFIsh = true;
+                break;
+            case (UpGrades.bouncingFish):
+                UpgradeHandeler.fishBouncePower += 2f;
+                UpgradeHandeler.bouncingFish = true;
                 break;
             case (UpGrades.playerMoveSpeedUp):
                 UpgradeHandeler.playerMoveSpeed *= 1.2f;

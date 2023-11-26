@@ -70,7 +70,7 @@ public class FishTraveling : MonoBehaviour {
                 GameObject.Destroy(gameObject);
             }
         }
-        if ((collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore")) && !UpgradeHandeler.piercingFish) {
+        if ((collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore")) && !UpgradeHandeler.piercingFish && !UpgradeHandeler.bouncingFish) {
             if (collision.CompareTag("Wall") && !UpgradeHandeler.piercingFish) {
                 GameObject.Destroy(gameObject);
                 partic.Stop();
@@ -91,6 +91,20 @@ public class FishTraveling : MonoBehaviour {
                 GameObject.Destroy(Instantiate(fishEnterParticles, gameObject.transform.position, gameObject.transform.rotation), .5f);
                 EndGame();
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if ((collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Door") || collision.collider.CompareTag("PhysicsObject")) && UpgradeHandeler.bouncingFish) {
+            ContactPoint2D point = collision.contacts[0];
+            //idk why is set it to vec2 zero. delete later also in bullet scipt
+            Vector2 newDir;
+            Vector2 curDire = this.transform.TransformDirection(Vector2.right);
+
+            newDir = Vector2.Reflect(curDire, point.normal);
+            transform.rotation = Quaternion.FromToRotation(Vector2.right, newDir);
+
+            rb.velocity = transform.right * (speed * UpgradeHandeler.fishBouncePower);
         }
     }
 

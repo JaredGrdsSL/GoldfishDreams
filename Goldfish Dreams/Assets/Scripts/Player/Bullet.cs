@@ -57,7 +57,7 @@ public class Bullet : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
         if ((collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Door") || collision.collider.CompareTag("PhysicsObject") || (collision.collider.CompareTag("Player") && canCollideWithPlayer)) && UpgradeHandeler.bulletBouncePower > 0) {
             ContactPoint2D point = collision.contacts[0];
-            Vector2 newDir = Vector2.zero;
+            Vector2 newDir;
             Vector2 curDire = this.transform.TransformDirection(Vector2.right);
 
             newDir = Vector2.Reflect(curDire, point.normal);

@@ -10,5 +10,7 @@ public class UpgradeHandeler : MonoBehaviour
     static public bool piercingBullets;
     static public int bulletMultiplyer = 1;
     static public bool coolFIsh;
+    static public float fishBouncePower = 0;
+    static public bool bouncingFish;
     static public float playerMoveSpeed = 10f;
 }

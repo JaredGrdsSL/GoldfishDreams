@@ -18,6 +18,7 @@ public class ResetGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) {
             //idk if ill reset the whole game or just the scene
             Time.timeScale = 1;
+            GameSettings.deaths++;
             string currentScene = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(currentScene);
         }

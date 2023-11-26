@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour
         if (GameSettings.timerOn) { 
             GameSettings.speedrunTimer = 0;
         }
+        GameSettings.deaths = 0;
 
         UpgradeHandeler.piercingFish = false;
         UpgradeHandeler.piercingFishDoors = false;

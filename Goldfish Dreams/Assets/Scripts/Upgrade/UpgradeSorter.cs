@@ -22,6 +22,7 @@ public class UpgradeSorter : MonoBehaviour {
     public GameObject piercingBullets;
     public GameObject bulletMultiplier;
     public GameObject coolFish;
+    public GameObject bouncingFish; 
     public GameObject movementSpeedUp;
 
     private void Awake() {
@@ -34,7 +35,7 @@ public class UpgradeSorter : MonoBehaviour {
         if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings != 0) {
             for (int i = 3; i > 0; i--) {
                 //only spawns the speedup if the speedruntimer is off otherwize it could make speedruns rely on rng. 
-                int e = Random.Range(1, GameSettings.timerOn ? 6 : 7 + 1) ;
+                int e = Random.Range(1, GameSettings.timerOn ? 7 + 1 : 8 + 1) ;
                 switch (e) {
                     case 1:
                         if (UpgradeHandeler.piercingFish) {
@@ -70,8 +71,11 @@ public class UpgradeSorter : MonoBehaviour {
                         }
                         Instantiate(coolFish, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
-                    //KEEP MOVESPEEDUPGRADE AT 6!!
                     case 7:
+                        Instantiate(bouncingFish, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
+                        break;
+                    //KEEP MOVESPEEDUPGRADE AT LAST!!
+                    case 8:
                         Instantiate(movementSpeedUp, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
                 }
@@ -79,7 +83,7 @@ public class UpgradeSorter : MonoBehaviour {
         }
         else if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings == 0) {
             FinishedScreen.SetActive(true);
-            Debug.Log("TimerOn is " + GameSettings.timerOn);
+            GameObject.Find("Deaths").GetComponent<TextMeshProUGUI>().text = "Deaths: " + GameSettings.deaths;
             if (GameSettings.timerOn) {
                 finalTimeText.SetActive(true);
                 int minutes = Mathf.FloorToInt(GameSettings.speedrunTimer / 60);
@@ -115,6 +119,8 @@ public class UpgradeSorter : MonoBehaviour {
     }
 
     public void Loop() {
+        GameSettings.deaths = 0;
+        GameSettings.speedrunTimer = 0;
         GameSettings.timerOn = false;
         SceneManager.LoadScene(1);
     }

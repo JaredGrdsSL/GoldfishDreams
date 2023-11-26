@@ -155,25 +155,9 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R)) {
             //idk if ill reset the whole game or just the scene
             Time.timeScale = 1;
+            GameSettings.deaths++;
             string currentScene = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(currentScene);
-        }
-
-        //debuig
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            UpgradeHandeler.piercingFish = !UpgradeHandeler.piercingFish;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) {
-            UpgradeHandeler.piercingFishDoors = !UpgradeHandeler.piercingFishDoors;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3)) {
-            UpgradeHandeler.bulletBouncePower += .5f;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4)) {
-            UpgradeHandeler.piercingBullets = !UpgradeHandeler.piercingBullets;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5)) {
-            UpgradeHandeler.bulletMultiplyer *= 2;
         }
     }
 
