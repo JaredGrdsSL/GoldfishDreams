@@ -10,6 +10,7 @@ public class FishTraveling : MonoBehaviour {
     private GameObject particle;
     private TextMeshProUGUI deathText;
     public ParticleSystem fishEnterParticles;
+    public Sprite coolFishSprite;
     public float speed;
     public GameObject player;
     public GameObject particles;
@@ -28,6 +29,10 @@ public class FishTraveling : MonoBehaviour {
         virtualCamera = GameObject.Find("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
+        if (UpgradeHandeler.coolFIsh) {
+            gameObject.GetComponent<SpriteRenderer>().sprite = coolFishSprite;
+        }
+        
         audioManager.Play("Wind");
     }
 

@@ -10,6 +10,8 @@ public class UpgradeGiver : MonoBehaviour {
         bouncingBullets,
         piercingBullets,
         bullterMultiplyer,
+        coolFish,
+        playerMoveSpeedUp,
     }
 
     public UpGrades upgrade;
@@ -32,6 +34,12 @@ public class UpgradeGiver : MonoBehaviour {
                 break;
             case (UpGrades.bullterMultiplyer):
                 UpgradeHandeler.bulletMultiplyer *= 2;
+                break;
+            case (UpGrades.coolFish):
+                UpgradeHandeler.coolFIsh = true;
+                break;
+            case (UpGrades.playerMoveSpeedUp):
+                UpgradeHandeler.playerMoveSpeed *= 1.2f;
                 break;
         }
 

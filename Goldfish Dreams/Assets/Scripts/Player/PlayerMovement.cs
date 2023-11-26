@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject Bullet;
     public GameObject corpse;
     private TextMeshProUGUI deathText;
-    public float moveSpeed;
     public int ammo;
     public float health = 1;
     private float downTime;
@@ -53,7 +52,6 @@ public class PlayerMovement : MonoBehaviour {
             return health;
         }
     }
-
 
     void Start() {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -180,7 +178,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void MovePlayer() {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.velocity = new Vector2(moveDirection.x * UpgradeHandeler.playerMoveSpeed, moveDirection.y * UpgradeHandeler.playerMoveSpeed);
     }
 
     IEnumerator Shoot() {

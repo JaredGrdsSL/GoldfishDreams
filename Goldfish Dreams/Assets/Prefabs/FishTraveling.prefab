@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishEnterParticles: {fileID: 5375024609904201783, guid: 82fcaa12dbe6b36408abe55f743091cd, type: 3}
+  coolFishSprite: {fileID: 21300000, guid: c40073071ef19f543b285451a06dc8d6, type: 3}
   speed: 15
   player: {fileID: 5625314856703869653, guid: d6d875f70bef00b40a6baf250cbc072b, type: 3}
   particles: {fileID: 4627594925166028172, guid: 86a011df73097134abd5f736e70987ed, type: 3}

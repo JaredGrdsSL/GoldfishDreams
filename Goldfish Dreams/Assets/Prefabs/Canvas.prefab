@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &553273130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1170103228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2272,6 +2272,8 @@ MonoBehaviour:
   bouncingBullets: {fileID: 7434016999418621712, guid: 5f410abdc7db2f949be9bfd3a0c029e5, type: 3}
   piercingBullets: {fileID: 708546609216060051, guid: fae7aba4dbb66cb47b606b448e149204, type: 3}
   bulletMultiplier: {fileID: 7467757656342689895, guid: bf89faf412efd13409a5d2122ad140ab, type: 3}
+  coolFish: {fileID: 59686315049118580, guid: f39a620215b5f0b4c83c4511946708b0, type: 3}
+  movementSpeedUp: {fileID: 4571609557067509908, guid: 9986cfd4826d74d4caff21cee55d1acb, type: 3}
 --- !u!1 &2655946651830876432
 GameObject:
   m_ObjectHideFlags: 0

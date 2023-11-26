@@ -11,24 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage1.unity
     guid: f45faf0547b644749b0c318a0a39d286
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage3.unity
     guid: 739f576c51f4ac84c924fd9dbe89d1fa
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage2.unity
     guid: 8cc9adeac0604c54fa5ded6d13728adc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Stage4.unity
     guid: 96cf3fe3070eec44c9907aed362cbd8e
-<<<<<<< Updated upstream
-  - enabled: 1
-    path: Assets/Scenes/Stage5.unity
-=======
-  - enabled: 0
-    path: Assets/Scenes/Stage 5.unity
->>>>>>> Stashed changes
-    guid: 75866d4f076124745a0295099748e0bf
-  - enabled: 0
-    path: Assets/Scenes/StarterPack.unity
-    guid: 39b117aba73369b4b8cc1655e465de07
   m_configObjects: {}

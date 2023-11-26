@@ -21,10 +21,11 @@ public class UpgradeSorter : MonoBehaviour {
     public GameObject bouncingBullets;
     public GameObject piercingBullets;
     public GameObject bulletMultiplier;
+    public GameObject coolFish;
+    public GameObject movementSpeedUp;
 
     private void Awake() {
-        finalTimeText = GameObject.Find("FinalTimeText");
-        finalTimeText.SetActive(false);
+        finalTimeText = FinishedScreen.transform.GetChild(2).gameObject;
     }
 
     private void OnEnable() {
@@ -32,7 +33,8 @@ public class UpgradeSorter : MonoBehaviour {
 
         if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings != 0) {
             for (int i = 3; i > 0; i--) {
-                int e = Random.Range(1, 5 + 1);
+                //only spawns the speedup if the speedruntimer is off otherwize it could make speedruns rely on rng. 
+                int e = Random.Range(1, GameSettings.timerOn ? 6 : 7 + 1) ;
                 switch (e) {
                     case 1:
                         if (UpgradeHandeler.piercingFish) {
@@ -61,12 +63,23 @@ public class UpgradeSorter : MonoBehaviour {
                     case 5:
                         Instantiate(bulletMultiplier, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
+                    case 6:
+                        if (UpgradeHandeler.coolFIsh) {
+                            i++;
+                            break;
+                        }
+                        Instantiate(coolFish, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
+                        break;
+                    //KEEP MOVESPEEDUPGRADE AT 6!!
+                    case 7:
+                        Instantiate(movementSpeedUp, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
+                        break;
                 }
             }
         }
-        isReady = true;
-        if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings == 0) {
+        else if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings == 0) {
             FinishedScreen.SetActive(true);
+            Debug.Log("TimerOn is " + GameSettings.timerOn);
             if (GameSettings.timerOn) {
                 finalTimeText.SetActive(true);
                 int minutes = Mathf.FloorToInt(GameSettings.speedrunTimer / 60);
@@ -74,9 +87,10 @@ public class UpgradeSorter : MonoBehaviour {
                 int milliseconds = Mathf.FloorToInt((GameSettings.speedrunTimer * 1000) % 1000);
 
                 string timerText = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
-                GameObject.Find("FinalTimeText").GetComponent<TextMeshProUGUI>().text = "FinalTime: " + timerText;
+                finalTimeText.GetComponent<TextMeshProUGUI>().text = "FinalTime: " + timerText;
             }
         }
+        isReady = true;
     }
 
     public GameObject EnterUpgrade(int i) {
