@@ -27,9 +27,8 @@ public class Bullet : MonoBehaviour {
             if (!UpgradeHandeler.piercingBullets) {
                 GameObject.Destroy(gameObject);
             }
-
         }
-
+        
         if (collision.CompareTag("Fish")) {
             GetCollider(gameObject).enabled = false;
         }
