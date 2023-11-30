@@ -40,10 +40,10 @@ public class EnemyController : MonoBehaviour {
     public float Health {
         set {
             health = value;
-            if (health <= 0) {
+            if (health == 0) {
                 audioManager.Play("Hurt2");
                 Instantiate(corpse, gameObject.transform.position, gameObject.transform.rotation);
-                GameObject.Find("LevelLoader").GetComponent<LevelLoader>().enemiesRemaining--;
+                //GameObject.Find("LevelLoader").GetComponent<LevelLoader>().enemiesRemaining--;
                 Destroy(gameObject);
             }
             else {

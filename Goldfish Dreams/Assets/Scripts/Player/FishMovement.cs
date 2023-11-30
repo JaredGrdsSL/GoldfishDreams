@@ -12,6 +12,7 @@ public class FishMovement : MonoBehaviour {
     private PlayerMovement playerMovement;
 
     public GameObject fishTraveling;
+    public GameObject enemyDead;
 
     void Start() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -37,10 +38,10 @@ public class FishMovement : MonoBehaviour {
             }
 
             if (Input.GetMouseButtonUp(1)) {
+                Instantiate(enemyDead, gameObject.transform.position, gameObject.transform.rotation);
                 Time.timeScale = 1f;
                 Time.fixedDeltaTime = Time.timeScale * 0.01f;
                 lineRenderer.enabled = false;
-
 
                 GameObject fishTravel = Instantiate(fishTraveling, gameObject.transform.position + transform.forward * 2, gameObject.transform.rotation);
                 if (UpgradeHandeler.piercingFish) {

@@ -5039,7 +5039,7 @@ SpriteShapeRenderer:
   m_SortingOrder: -16
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
-  m_ShapeTexture: {fileID: 2800000, guid: dc77903a70f46e64685f191d9bc97ef9, type: 3}
+  m_ShapeTexture: {fileID: 2800000, guid: 2634b2ed43f895341840ed3e919245f3, type: 3}
   m_Sprites:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
@@ -6182,7 +6182,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0.22
   m_Points:
   - {x: 3.999998, y: 1.987951}
-  - {x: -0.012948409, y: 1.987951}
+  - {x: -0.01294855, y: 1.987951}
   - {x: -0.012948379, y: -0.011756836}
   - {x: -5.000452, y: -0.012048855}
   - {x: -4.998783, y: -7.485808}
@@ -7575,7 +7575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 926427304110508311, guid: e62fb80b6214a9148a4b6ae113bdc49e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e62fb80b6214a9148a4b6ae113bdc49e, type: 3}
@@ -9450,7 +9450,7 @@ EdgeCollider2D:
   m_Points:
   - {x: 3.9999943, y: 1.9889544}
   - {x: -1.6125011, y: 1.9754512}
-  - {x: 0.6370489, y: 1.9745513}
+  - {x: 0.63704896, y: 1.9745513}
   - {x: 0.63704884, y: -2.7749984}
   - {x: 0.63704884, y: -3.0249987}
   m_AdjacentStartPoint: {x: 0, y: 0}

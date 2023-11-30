@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishTraveling: {fileID: 3156947336855376858, guid: e32258391ebf62d4c901109514322062, type: 3}
+  enemyDead: {fileID: 3957826334686605690, guid: 8284cf00322c76b4faf9b05ad33ef2b6, type: 3}
 --- !u!120 &569455601
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -556,7 +557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1636729078170849755, guid: e53fb489ef3ae734487cfb1a2b0d38ea, type: 3}
   corpse: {fileID: 3712129993198474820, guid: 1fa029f83481c9d4b864ecd58c395976, type: 3}
-  moveSpeed: 10
   ammo: 0
   health: 1
   gunEquiped: 0
