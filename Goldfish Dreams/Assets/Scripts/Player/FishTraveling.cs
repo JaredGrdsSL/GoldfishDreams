@@ -65,7 +65,7 @@ public class FishTraveling : MonoBehaviour {
             GameObject.Destroy(newParticle.gameObject, .5f);
             GameObject.Destroy(particle, .5f);
             GameObject.Destroy(collision.gameObject);
-            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().enemiesRemaining--;
+            //GameObject.Find("LevelLoader").GetComponent<LevelLoader>().enemiesRemaining--;
             if (!UpgradeHandeler.piercingFish) {
                 GameObject.Destroy(gameObject);
             }
