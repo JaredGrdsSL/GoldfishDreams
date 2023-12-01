@@ -20,6 +20,10 @@ public class AlwaysOnScript : MonoBehaviour {
 
 
     void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) { 
+            Application.Quit();
+        }
+
         if (GameSettings.timerOn) {
             GameSettings.speedrunTimer += Time.deltaTime;
 

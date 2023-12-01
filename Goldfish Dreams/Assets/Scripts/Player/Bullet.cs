@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour {
 
     private Rigidbody2D rb;
     private bool canCollideWithPlayer = false;
+    private int bounces = 0;
 
     private void Start() {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -33,7 +34,7 @@ public class Bullet : MonoBehaviour {
             GetCollider(gameObject).enabled = false;
         }
 
-        if ((collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore")) && UpgradeHandeler.bulletBouncePower == 0) {
+        if ((collision.CompareTag("Wall") || collision.CompareTag("Door") || collision.CompareTag("Player") || collision.CompareTag("PhysicsObject") || collision.CompareTag("Ignore")) && (UpgradeHandeler.bulletBouncePower == 0 || (UpgradeHandeler.bulletBouncePower > 0 && bounces == UpgradeHandeler.maxBounces))) {
             if (collision.CompareTag("Wall")) {
                 GameObject.Destroy(gameObject);
                 GameObject.Destroy(Instantiate(hitObsticleParticles, gameObject.transform.position, gameObject.transform.rotation).gameObject, .4f);
@@ -54,7 +55,8 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if ((collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Door") || collision.collider.CompareTag("PhysicsObject") || (collision.collider.CompareTag("Player") && canCollideWithPlayer)) && UpgradeHandeler.bulletBouncePower > 0) {
+        if ((collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Door") || collision.collider.CompareTag("PhysicsObject") || (collision.collider.CompareTag("Player") && canCollideWithPlayer)) && (UpgradeHandeler.bulletBouncePower > 0 && bounces < UpgradeHandeler.maxBounces)) {
+            bounces++;
             ContactPoint2D point = collision.contacts[0];
             Vector2 newDir;
             Vector2 curDire = this.transform.TransformDirection(Vector2.right);
