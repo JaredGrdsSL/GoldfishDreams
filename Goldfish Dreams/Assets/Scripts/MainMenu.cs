@@ -9,11 +9,13 @@ public class MainMenu : MonoBehaviour
     private GameObject settingsPannel;
     private GameObject credditsPannel;
     private Toggle timerToggler;
+    private Toggle musicToggler;
     private Slider audioSlider;
 
     private void Awake() {
         audioSlider = GameObject.Find("AudioSlider").GetComponent<Slider>();
         timerToggler = GameObject.Find("TimerToggle").GetComponent<Toggle>();
+        musicToggler = GameObject.Find("MusicToggle").GetComponent<Toggle>();
     }
 
     private void Start() {
@@ -25,6 +27,7 @@ public class MainMenu : MonoBehaviour
         GameSettings.speedrunTimer = 0;
         audioSlider.value = AudioListener.volume;
         timerToggler.isOn = GameSettings.timerOn;
+        musicToggler.isOn = GameSettings.music;
     }
 
     public void StartGame() {
@@ -57,6 +60,12 @@ public class MainMenu : MonoBehaviour
     public void timerToggle(bool tog) {
         GameSettings.timerOn = tog;
         Debug.Log(GameSettings.timerOn);
+    }
+
+    public void musicToggle(bool tog) {
+        GameSettings.music = tog;
+        GameObject.Find("BGMusic").GetComponent<AudioSource>().enabled = tog;
+        Debug.Log(GameSettings.music);
     }
 
     public void BackButtonSettings() {

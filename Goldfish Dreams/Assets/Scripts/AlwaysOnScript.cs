@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class AlwaysOnScript : MonoBehaviour
-{
+public class AlwaysOnScript : MonoBehaviour {
     public TextMeshProUGUI speedrunTimerText;
 
     int minutes;
     int seconds;
     int milliseconds;
 
-    void Start()
-    {
+    void Start() {
         if (!GameSettings.timerOn) {
             speedrunTimerText.enabled = false;
         }
+
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().enabled = GameSettings.music;
     }
 
-    
-    void Update()
-    {
-        if (GameSettings.timerOn) { 
+
+    void Update() {
+        if (GameSettings.timerOn) {
             GameSettings.speedrunTimer += Time.deltaTime;
 
             minutes = Mathf.FloorToInt(GameSettings.speedrunTimer / 60);
