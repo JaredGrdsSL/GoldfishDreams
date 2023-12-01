@@ -22,7 +22,7 @@ public class LevelLoader : MonoBehaviour {
 
         if (collision.CompareTag("Player")) {
             if (enemiesNeedToBeKilled) {
-                if (enemiesRemaining <= 0) {
+                if (enemiesRemaining <= 0 || UpgradeHandeler.piercingFish) {
 
                     SendPlayer(collision);
                 }

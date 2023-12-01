@@ -22,7 +22,7 @@ public class UpgradeSorter : MonoBehaviour {
     public GameObject piercingBullets;
     public GameObject bulletMultiplier;
     public GameObject coolFish;
-    public GameObject bouncingFish; 
+    public GameObject bouncingFish;
     public GameObject movementSpeedUp;
 
     private void Awake() {
@@ -30,12 +30,12 @@ public class UpgradeSorter : MonoBehaviour {
     }
 
     private void OnEnable() {
-        
+
 
         if (isReady && (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings != 0) {
             for (int i = 3; i > 0; i--) {
                 //only spawns the speedup if the speedruntimer is off otherwize it could make speedruns rely on rng. 
-                int e = Random.Range(1, GameSettings.timerOn ? 7 + 1 : 8 + 1) ;
+                int e = Random.Range(1, GameSettings.timerOn ? 7 + 1 : 8 + 1);
                 switch (e) {
                     case 1:
                         if (UpgradeHandeler.piercingFish) {
@@ -52,7 +52,7 @@ public class UpgradeSorter : MonoBehaviour {
                         Instantiate(piercingFishDoors, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
                     case 3:
-                        Instantiate(bouncingBullets, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
+                            Instantiate(bouncingBullets, EnterUpgrade(i).transform.position, gameObject.transform.rotation, EnterUpgrade(i).transform);
                         break;
                     case 4:
                         if (UpgradeHandeler.piercingBullets) {
