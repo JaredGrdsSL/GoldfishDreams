@@ -22,8 +22,11 @@ public class LevelLoader : MonoBehaviour {
 
         if (collision.CompareTag("Player")) {
             if (enemiesNeedToBeKilled) {
-                if (enemiesRemaining <= 0 || UpgradeHandeler.piercingFish) {
+                if (UpgradeHandeler.piercingFish) {
+                    CheckPiercingFish();
+                }
 
+                if (enemiesRemaining <= 0) {
                     SendPlayer(collision);
                 }
 
@@ -36,12 +39,20 @@ public class LevelLoader : MonoBehaviour {
             else {
                 SendPlayer(collision);
             }
-        }
+        }   
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (levelLoaderText.color == new Color(1, 1, 1, 1)) {
             levelLoaderText.color = new Color(1, 1, 1, 0);
+        }
+    }
+
+    private void CheckPiercingFish() {
+        LevelLoader levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+        PlayerMovement[] playersMovements = FindObjectsOfType<PlayerMovement>();
+        for (int i = playersMovements.Length -1;  i > 0; i--) {
+            playersMovements[i].Health = 0;
         }
     }
 
